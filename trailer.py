@@ -12,7 +12,7 @@ def trailerisvalid(trailer):
         return True
     else:
         return False
-def getTrailer():
+def getTrailer(s):
     option = webdriver.ChromeOptions()
     option.add_argument('--headless')
     option.add_argument('--no-sandbox')
@@ -23,6 +23,7 @@ def getTrailer():
     driver = webdriver.Chrome(options=option)
 
     try:
+        url = 'https://www.imdb.com/title/tt10872600' + s + '/'
         driver.get('https://www.imdb.com/title/tt10872600/') # Getting page HTML through request
 
         WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))
