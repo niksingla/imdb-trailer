@@ -3,7 +3,7 @@ import trailer
 
 app = Flask(__name__)
 
-@app.route("/a")
+@app.route("/")
 def hello_world():
     t= trailer.getTrailer()
     if not t=='failed':
@@ -12,4 +12,4 @@ def hello_world():
         return jsonify({'request':'failed'})
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
