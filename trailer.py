@@ -23,7 +23,8 @@ def getTrailer(s):
     driver = webdriver.Chrome(options=option)
 
     try:
-        url = 'https://www.imdb.com/title/tt10872600' + s + '/'
+        url = 'https://www.imdb.com/title/' + s + '/'
+        #print(url)
         driver.get(url) # Getting page HTML through request
 
         WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))

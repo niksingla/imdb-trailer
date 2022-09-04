@@ -2,8 +2,7 @@ from flask import Flask, jsonify
 import trailer
 
 app = Flask(__name__)
-st = 'adad'
-print(st[:2])
+
 @app.route("/<string:s>")
 def hello_world(s):
     if s[:2]=='tt':
