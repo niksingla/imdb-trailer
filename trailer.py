@@ -22,13 +22,16 @@ def getTrailer():
 
     driver = webdriver.Chrome(options=option)
 
-    driver.get('https://www.imdb.com/title/tt0145487/') # Getting page HTML through request
+    try:
+        driver.get('https://www.imdb.com/title/tt10872600/') # Getting page HTML through request
 
-    WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))
-    videoElement = driver.find_element(By.CSS_SELECTOR, "video.jw-video.jw-reset")
-    #print(videoElement.get_attribute('src'))
-    trailer = videoElement.get_attribute('src')
-    if trailerisvalid(trailer):
-        return trailer
-    return 'failed'
-
+        WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))
+        videoElement = driver.find_element(By.CSS_SELECTOR, "video.jw-video.jw-reset")
+        #print(videoElement.get_attribute('src'))
+        trailer = videoElement.get_attribute('src')
+        if trailerisvalid(trailer):
+            return trailer
+        return 'failed'
+    except Exception as e:
+        print(e)
+        return 'failed'
