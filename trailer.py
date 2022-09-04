@@ -24,7 +24,7 @@ def getTrailer(s):
 
     try:
         url = 'https://www.imdb.com/title/tt10872600' + s + '/'
-        driver.get('https://www.imdb.com/title/tt10872600/') # Getting page HTML through request
+        driver.get('url') # Getting page HTML through request
 
         WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))
         videoElement = driver.find_element(By.CSS_SELECTOR, "video.jw-video.jw-reset")
