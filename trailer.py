@@ -27,7 +27,7 @@ def getTrailer(s):
         #print(url)
         driver.get(url) # Getting page HTML through request
 
-        WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "video.jw-video.jw-reset")))
         videoElement = driver.find_element(By.CSS_SELECTOR, "video.jw-video.jw-reset")
         #print(videoElement.get_attribute('src'))
         trailer = videoElement.get_attribute('src')
