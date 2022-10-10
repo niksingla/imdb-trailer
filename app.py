@@ -1,8 +1,5 @@
 from flask import Flask, jsonify
 import trailer
-import platform
-a = platform.uname()
-print(a)
 
 app = Flask(__name__)
 
