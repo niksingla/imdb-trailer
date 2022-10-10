@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 import trailer
-
+import os
+os.chmod('/workspace/chromedriver', 0o755)
+print('chmod updated!')
 
 app = Flask(__name__)
 
