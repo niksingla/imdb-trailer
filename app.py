@@ -1,5 +1,8 @@
 from flask import Flask, jsonify
 import trailer
+import os
+
+print(os.getcwd())
 
 app = Flask(__name__)
 
