@@ -20,7 +20,7 @@ def getTrailer(s):
     option.add_argument('--disable-dev-shm-usage')
     option.add_argument('--log-level=3')
 
-    driver = webdriver.Chrome(options=option)
+    driver = webdriver.Chrome(executable_path='/workspace/chromedriver', options=option)
 
     try:
         url = 'https://www.imdb.com/title/' + s + '/'
