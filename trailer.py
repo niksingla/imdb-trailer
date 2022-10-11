@@ -6,9 +6,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import validators
-import chromedriver_autoinstaller
-
-chromedriver_autoinstaller.install()
 
 def trailerisvalid(trailer):
     if validators.url(trailer)==True:
