@@ -13,16 +13,16 @@ def trailerisvalid(trailer):
     else:
         return False
 def getTrailer(s):
-    option = webdriver.ChromeOptions()
-    option.add_argument('--headless')
-    option.add_argument('--no-sandbox')
-    option.add_argument('--disable-dev-sh-usage')
-    option.add_argument('--disable-dev-shm-usage')
-    option.add_argument('--log-level=3')
-
-    driver = webdriver.Chrome(options=option)
-
     try:
+        option = webdriver.ChromeOptions()
+        option.add_argument('--headless')
+        option.add_argument('--no-sandbox')
+        option.add_argument('--disable-dev-sh-usage')
+        option.add_argument('--disable-dev-shm-usage')
+        option.add_argument('--log-level=3')
+
+        driver = webdriver.Chrome(options=option)
+
         url = 'https://www.imdb.com/title/' + s + '/'
         #print(url)
         driver.get(url) # Getting page HTML through request
