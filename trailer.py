@@ -6,6 +6,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import validators
+import chromedriver_autoinstaller
+
+chromedriver_autoinstaller.install()
 
 def trailerisvalid(trailer):
     if validators.url(trailer)==True:
@@ -20,7 +23,7 @@ def getTrailer(s):
     option.add_argument('--disable-dev-shm-usage')
     option.add_argument('--log-level=3')
 
-    driver = webdriver.Chrome(executable_path='/workspace/chromedriver', options=option)
+    driver = webdriver.Chrome(options=option)
 
     try:
         url = 'https://www.imdb.com/title/' + s + '/'
